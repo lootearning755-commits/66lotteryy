@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>66Lottery</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+    }
+
+    body {
+        background: url('1000355082.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        min-height: 100vh;
+    }
+
+    .overlay {
+        background: radial-gradient(circle at top, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+        min-height: 100vh;
+        padding: 15px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-weight: 900;
+        font-size: clamp(26px, 4vw, 40px);
+        color: #ffd700;
+        text-shadow: 0 0 10px #ff9900;
+    }
+
+    .register-btn {
+        background: linear-gradient(45deg, #ffcc00, #ff6600);
+        border: none;
+        padding: 12px 20px;
+        color: black;
+        font-weight: bold;
+        font-size: clamp(16px, 2.5vw, 20px);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #ff9900;
+    }
+
+    .register-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .hero {
+        text-align: center;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 7vw, 70px);
+        margin-bottom: 10px;
+        font-weight: 900;
+        color: #ffcc00;
+    }
+
+    .hero p {
+        font-size: clamp(18px, 3vw, 24px);
+    }
+
+    /* 🎰 JACKPOT BAR */
+    .jackpot {
+        margin-top: 20px;
+        font-size: clamp(22px, 4vw, 36px);
+        font-weight: bold;
+        color: #00ffcc;
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #0099ff;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .card {
+        background: rgba(0,0,0,0.6);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+        border: 1px solid rgba(255,215,0,0.3);
+    }
+
+    .card:hover {
+        transform: translateY(-8px) scale(1.05);
+    }
+
+    .card h3 {
+        font-size: clamp(20px, 3vw, 26px);
+        color: #ffd700;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: clamp(14px, 2vw, 18px);
+        color: #eee;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        opacity: 0.8;
+        font-size: clamp(12px, 2vw, 14px);
+    }
+</style>
+</head>
+<body>
+<div class="overlay">
+
+<header>
+    <div class="logo">66Lottery</div>
+    <button class="register-btn" onclick="window.location.href='https://www.66lotterym.com/#/pages/login/register?invitationCode=0709458577'">
+        Register
+    </button>
+</header>
+
+<section class="hero">
+    <h1>WIN BIG TODAY</h1>
+    <p>Poker • Slots • Lottery • Sports Betting</p>
+
+    <div class="jackpot">
+        JACKPOT: ₹<span id="jackpotValue">1000000</span>
+    </div>
+</section>
+
+<section class="features">
+    <div class="card">
+        <h3>Poker</h3>
+        <p>High stakes tables & real excitement</p>
+    </div>
+    <div class="card">
+        <h3>Slots</h3>
+        <p>Spin & hit massive jackpots</p>
+    </div>
+    <div class="card">
+        <h3>Lottery</h3>
+        <p>Win life-changing prizes instantly</p>
+    </div>
+    <div class="card">
+        <h3>Sports</h3>
+        <p>Bet and win on live games</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 66Lottery. All Rights Reserved.
+</footer>
+
+</div>
+
+<script>
+// 🎰 MOVING JACKPOT COUNTER
+let jackpot = 1000000;
+setInterval(() => {
+    jackpot += Math.floor(Math.random() * 500);
+    document.getElementById('jackpotValue').innerText = jackpot.toLocaleString();
+}, 1000);
+</script>
+
+</body>
+</html>
